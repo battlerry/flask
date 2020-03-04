@@ -1,0 +1,1393 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Flask-SQLAlchemy · Flask</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="battlerry">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flask-migrate.html" />
+    
+    
+    <link rel="prev" href="flask-uploads.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/framework.html">
+            
+                <a href="../introduction/framework.html">
+            
+                    
+                    底层框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/demo.html">
+            
+                <a href="../introduction/demo.html">
+            
+                    
+                    入门演示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/view.html">
+            
+                <a href="../introduction/view.html">
+            
+                    
+                    视图函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/request_response.html">
+            
+                <a href="../introduction/request_response.html">
+            
+                    
+                    请求响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduction/blueprint.html">
+            
+                <a href="../introduction/blueprint.html">
+            
+                    
+                    蓝本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduction/hook.html">
+            
+                <a href="../introduction/hook.html">
+            
+                    
+                    请求钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../introduction/piecemeal.html">
+            
+                <a href="../introduction/piecemeal.html">
+            
+                    
+                    零碎知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../introduction/template.html">
+            
+                <a href="../introduction/template.html">
+            
+                    
+                    模板使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../introduction/static.html">
+            
+                <a href="../introduction/static.html">
+            
+                    
+                    静态资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../introduction/model.html">
+            
+                <a href="../introduction/model.html">
+            
+                    
+                    数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../conversation/">
+            
+                <a href="../conversation/">
+            
+                    
+                    会话技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../conversation/cookie.html">
+            
+                <a href="../conversation/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../conversation/session.html">
+            
+                <a href="../conversation/session.html">
+            
+                    
+                    Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../conversation/token.html">
+            
+                <a href="../conversation/token.html">
+            
+                    
+                    Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    常用扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="flask-script.html">
+            
+                <a href="flask-script.html">
+            
+                    
+                    Flask-Script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="flask-debugtoolbar.html">
+            
+                <a href="flask-debugtoolbar.html">
+            
+                    
+                    Flask-DebugToolbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="flask-session.html">
+            
+                <a href="flask-session.html">
+            
+                    
+                    Flask-Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="flask-login.html">
+            
+                <a href="flask-login.html">
+            
+                    
+                    Flask-Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="flask-restful.html">
+            
+                <a href="flask-restful.html">
+            
+                    
+                    Flask-RESTful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="flask-restplus.html">
+            
+                <a href="flask-restplus.html">
+            
+                    
+                    Flask-RESTPlus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="flask-httpauth.html">
+            
+                <a href="flask-httpauth.html">
+            
+                    
+                    Flask-HTTPAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="flask-jwt-extended.html">
+            
+                <a href="flask-jwt-extended.html">
+            
+                    
+                    Flask-JWT-Extended
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="flask-bootstrap.html">
+            
+                <a href="flask-bootstrap.html">
+            
+                    
+                    Flask-Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="flask-moment.html">
+            
+                <a href="flask-moment.html">
+            
+                    
+                    Flask-Moment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="flask-mail.html">
+            
+                <a href="flask-mail.html">
+            
+                    
+                    Flask-Mail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="flask-wtf.html">
+            
+                <a href="flask-wtf.html">
+            
+                    
+                    Flask-WTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="flask-uploads.html">
+            
+                <a href="flask-uploads.html">
+            
+                    
+                    Flask-Uploads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.14" data-path="flask-sqlalchemy.html">
+            
+                <a href="flask-sqlalchemy.html">
+            
+                    
+                    Flask-SQLAlchemy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="flask-migrate.html">
+            
+                <a href="flask-migrate.html">
+            
+                    
+                    Flask-Migrate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="flask-cache.html">
+            
+                <a href="flask-cache.html">
+            
+                    
+                    Flask-Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="flask-cors.html">
+            
+                <a href="flask-cors.html">
+            
+                    
+                    Flask-CORS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="flask-celery-helper.html">
+            
+                <a href="flask-celery-helper.html">
+            
+                    
+                    Flask-Celery-Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../deployments/">
+            
+                <a href="../deployments/">
+            
+                    
+                    项目部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../deployments/uwsgi.html">
+            
+                <a href="../deployments/uwsgi.html">
+            
+                    
+                    uwsgi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../deployments/gunicorn.html">
+            
+                <a href="../deployments/gunicorn.html">
+            
+                    
+                    gunicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Flask-SQLAlchemy</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="flask-sqlalchemy">Flask-SQLAlchemy</h1>
+<h3 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h3>
+<ul>
+<li>&#x8BE5;&#x6269;&#x5C55;&#x63D0;&#x4F9B;&#x4E86;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x800C;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;ORM&#x3002;</li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<ul>
+<li><code>pip install flask-sqlalchemy</code></li>
+</ul>
+<h3 id="&#x6587;&#x6863;">&#x6587;&#x6863;</h3>
+<ul>
+<li><a href="http://www.pythondoc.com/flask-sqlalchemy/" target="_blank">&#x4E2D;&#x6587;&#x6587;&#x6863;</a></li>
+<li><a href="https://flask-sqlalchemy.palletsprojects.com/" target="_blank">&#x82F1;&#x6587;&#x6587;&#x6863;</a></li>
+</ul>
+<h3 id="&#x914D;&#x7F6E;&#xFF1A;">&#x914D;&#x7F6E;&#xFF1A;</h3>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;<code>SQLALCHEMY_DATABASE_URI</code></li>
+<li>&#x4F5C;&#x7528;&#xFF1A;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5730;&#x5740;</li>
+<li>&#x53D6;&#x503C;&#xFF1A;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x5E93;</th>
+<th>&#x5730;&#x5740;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sqlite</td>
+<td>sqlite:/// + &#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>mysql+pymysql://username:password@host:port/database</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x4F7F;&#x7528;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask_sqlalchemy <span class="hljs-keyword">import</span> SQLAlchemy
+
+<span class="hljs-comment"># &#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x5730;&#x5740;</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_DATABASE_URI&apos;</span>] = <span class="hljs-string">&apos;mysql+pymysql://root:123456@127.0.0.1:3306/model&apos;</span>
+
+<span class="hljs-comment"># &#x6570;&#x636E;&#x8868;&#x7684;&#x66F4;&#x6539;&#x8FFD;&#x8E2A;&#xFF0C;&#x9700;&#x8981;&#x6D88;&#x8017;&#x989D;&#x5916;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x5173;&#x95ED;</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_TRACK_MODIFICATIONS&apos;</span>] = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;</span>
+db = SQLAlchemy(app)
+
+<span class="hljs-comment"># &#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(db.Model)</span>:</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = db.Column(db.String(<span class="hljs-number">20</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+    email = db.Column(db.String(<span class="hljs-number">32</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+</code></pre>
+<h3 id="curd&#x64CD;&#x4F5C;">CURD&#x64CD;&#x4F5C;</h3>
+<ul>
+<li>&#x589E;&#x52A0;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x914D;&#x7F6E;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#xFF1A;&#x5728;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_COMMIT_ON_TEARDOWN&apos;</span>] = <span class="hljs-keyword">True</span>
+
+<span class="hljs-meta">@app.route(&apos;/insert/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x6A21;&#x578B;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment"># longwei = User(name=&apos;longwei&apos;, email=&apos;longwei@163.com&apos;)</span>
+    <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#xFF1A;&#x63D2;&#x5165;&#x5355;&#x6761;&#x6570;&#x636E;</span>
+    <span class="hljs-comment"># db.session.add(longwei)</span>
+
+    wenming = User(name=<span class="hljs-string">&apos;wenming&apos;</span>, email=<span class="hljs-string">&apos;wenming@163.com&apos;</span>)
+    kunyu = User(name=<span class="hljs-string">&apos;kunyu&apos;</span>, email=<span class="hljs-string">&apos;kunyu@163.com&apos;</span>)
+    linfei = User(name=<span class="hljs-string">&apos;linfei&apos;</span>, email=<span class="hljs-string">&apos;linfei@163.com&apos;</span>)
+    luoyu = User(name=<span class="hljs-string">&apos;luoyu&apos;</span>, email=<span class="hljs-string">&apos;luoyu@163.com&apos;</span>)
+    yuhang = User(name=<span class="hljs-string">&apos;yuhang&apos;</span>, email=<span class="hljs-string">&apos;yuhang@163.com&apos;</span>)
+    peilong = User(name=<span class="hljs-string">&apos;peilong&apos;</span>, email=<span class="hljs-string">&apos;peilong@163.com&apos;</span>)
+    <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#xFF1A;&#x63D2;&#x5165;&#x591A;&#x6761;&#x6570;&#x636E;</span>
+    db.session.add_all([wenming, kunyu, linfei, luoyu, yuhang, peilong])
+
+    <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x64CD;&#x4F5C;</span>
+    <span class="hljs-comment"># db.session.commit()</span>
+    <span class="hljs-comment"># &#x64CD;&#x4F5C;&#x56DE;&#x6EDA;</span>
+    <span class="hljs-comment"># db.session.rollback()</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6570;&#x636E;&#x5DF2;&#x6DFB;&#x52A0;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x67E5;&#x5BFB;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/select/&lt;int:uid&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select</span><span class="hljs-params">(uid)</span>:</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x4E3B;&#x952E;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF1A;&#x67E5;&#x5230;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6CA1;&#x6709;&#x67E5;&#x5230;&#x8FD4;&#x56DE;None</span>
+    user = User.query.get(uid)
+    <span class="hljs-keyword">if</span> user:
+        <span class="hljs-keyword">return</span> user.name
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x67E5;&#x65E0;&#x6B64;&#x4EBA;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x4FEE;&#x6539;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/update/&lt;int:uid&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span><span class="hljs-params">(uid)</span>:</span>
+    user = User.query.get(uid)
+    <span class="hljs-keyword">if</span> user:
+        <span class="hljs-comment"># &#x4FEE;&#x6539;&#x5C5E;&#x6027;</span>
+        user.email = <span class="hljs-string">&apos;xxx@163.com&apos;</span>
+        <span class="hljs-comment"># &#x6CA1;&#x6709;&#x5355;&#x72EC;&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x8981;&#x518D;&#x6B21;&#x4FDD;&#x5B58;&#xFF0C;ORM&#x4F1A;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x4E3A;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;</span>
+        db.session.add(user)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6570;&#x636E;&#x5DF2;&#x66F4;&#x6539;&apos;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x67E5;&#x65E0;&#x6B64;&#x4EBA;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x5220;&#x9664;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/delete/&lt;int:uid&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete</span><span class="hljs-params">(uid)</span>:</span>
+    user = User.query.get(uid)
+    <span class="hljs-keyword">if</span> user:
+        db.session.delete(user)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6570;&#x636E;&#x5DF2;&#x5220;&#x9664;&apos;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x67E5;&#x65E0;&#x6B64;&#x4EBA;&apos;</span>
+</code></pre>
+<h3 id="&#x6A21;&#x578B;&#x8BBE;&#x8BA1;&#x53C2;&#x8003;">&#x6A21;&#x578B;&#x8BBE;&#x8BA1;&#x53C2;&#x8003;</h3>
+<ul>
+<li>&#x5E38;&#x89C1;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">python&#x7C7B;&#x578B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">int</td>
+</tr>
+<tr>
+<td style="text-align:left">Float</td>
+<td style="text-align:left">float</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">str&#xFF0C;&#x53D8;&#x6210;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">Text</td>
+<td style="text-align:left">str&#xFF0C;&#x957F;&#x5EA6;&#x4E0D;&#x53D7;&#x9650;&#x5236;&#x7684;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">bool&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x53EA;&#x6709;True/False</td>
+</tr>
+<tr>
+<td style="text-align:left">Date</td>
+<td style="text-align:left">datetime.date&#xFF0C;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">datetime.time&#xFF0C;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:left">DateTime</td>
+<td style="text-align:left">datetime.datetime&#xFF0C;&#x65E5;&#x671F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:left">Interval</td>
+<td style="text-align:left">datetime.timedelta&#xFF0C;&#x65F6;&#x95F4;&#x95F4;&#x9694;</td>
+</tr>
+<tr>
+<td style="text-align:left">PickleType</td>
+<td style="text-align:left">pickle.dumps()&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x540E;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left">LargeBinary</td>
+<td style="text-align:left">bytes&#xFF0C;&#x4EFB;&#x610F;&#x5927;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5E38;&#x89C1;&#x5B57;&#x6BB5;&#x9009;&#x9879;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5B57;&#x6BB5;&#x9009;&#x9879;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">primary_key</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;False</td>
+</tr>
+<tr>
+<td style="text-align:left">autoincrement</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x81EA;&#x589E;&#x5B57;&#x6BB5;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;False</td>
+</tr>
+<tr>
+<td style="text-align:left">unique</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;False</td>
+</tr>
+<tr>
+<td style="text-align:left">index</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x666E;&#x901A;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;False</td>
+</tr>
+<tr>
+<td style="text-align:left">nullable</td>
+<td style="text-align:left">&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;True</td>
+</tr>
+<tr>
+<td style="text-align:left">default</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x81EA;&#x52A8;&#x751F;&#x6548;(&#x8868;&#x7ED3;&#x6784;&#x770B;&#x4E0D;&#x5230;)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x4F7F;&#x7528;&#x603B;&#x7ED3;<ul>
+<li>&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x53EF;&#x4EE5;&#x4E0D;&#x4F20;&#x503C;&#x7684;&#x60C5;&#x51B5;&#xFF1A;&#x81EA;&#x589E;&#x7684;&#x5B57;&#x6BB5;&#x3001;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x3001;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x7684;</li>
+<li>&#x4F7F;&#x7528;<code>flask-sqlalchemy</code>&#x65F6;&#x9700;&#x8981;&#x6BCF;&#x4E2A;&#x6A21;&#x578B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;<code>id</code></li>
+<li>&#x6A21;&#x578B;&#x540D;&#x4E0E;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;<ul>
+<li>&#x9ED8;&#x8BA4;&#x5C06;&#x6A21;&#x578B;&#x7C7B;&#x540D;&#x7684;&#x5927;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x98CE;&#x683C;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x86C7;&#x5F62;&#x547D;&#x540D;&#x4F5C;&#x4E3A;&#x8868;&#x540D;&#xFF0C;&#x5982;&#xFF1A;<ul>
+<li><code>UserModel =&gt; user_model</code></li>
+</ul>
+</li>
+<li>&#x6307;&#x5B9A;&#x8868;&#x540D;&#xFF1A;<code>__tablename__ = &apos;xxx&apos;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;">&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;ORM&#x4E2D;&#xFF0C;&#x5404;&#x79CD;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;</p>
+</li>
+<li><p>&#x5E38;&#x89C1;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">get</td>
+<td style="text-align:left">&#x6839;&#x636E;&#x4E3B;&#x952E;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x627E;&#x5230;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x8FD4;&#x56DE;None</td>
+</tr>
+<tr>
+<td style="text-align:left">get_or_404</td>
+<td style="text-align:left">&#x529F;&#x80FD;&#x540C;&#x4E0A;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x65F6;&#x62A5;404&#x9519;</td>
+</tr>
+<tr>
+<td style="text-align:left">first</td>
+<td style="text-align:left">&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:left">firs_or_404</td>
+<td style="text-align:left">&#x529F;&#x80FD;&#x540C;&#x4E0A;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x65F6;&#x62A5;404&#x9519;</td>
+</tr>
+<tr>
+<td style="text-align:left">all</td>
+<td style="text-align:left">&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:left">order_by</td>
+<td style="text-align:left">&#x6392;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;asc(&#x5347;&#x5E8F;)&#xFF0C;desc(&#x964D;&#x5E8F;)</td>
+</tr>
+<tr>
+<td style="text-align:left">offset</td>
+<td style="text-align:left">&#x8DF3;&#x8FC7;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:left">limit</td>
+<td style="text-align:left">&#x9650;&#x5236;&#x63D0;&#x53D6;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#x96C6;&#x6570;&#x91CF;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">filter_by</td>
+<td style="text-align:left">&#x53C2;&#x6570;&#x662F;&#x5173;&#x952E;&#x5B57;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x53EA;&#x80FD;&#x662F;&#x7B49;&#x503C;&#x6761;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x591A;&#x6B21;</td>
+</tr>
+<tr>
+<td style="text-align:left">filter</td>
+<td style="text-align:left">&#x53C2;&#x6570;&#x65F6;SQL&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7528;&#x6CD5;&#x540C;&#x4E0A;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>filter&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</p>
+<ul>
+<li>&#x5173;&#x7CFB;</li>
+</ul>
+<pre><code>&gt;, __gt__
+    users = User.query.filter(User.id &gt; 5).all()
+    # &#x4E0E;&#x4E0A;&#x5F0F;&#x7B49;&#x4EF7;
+    users = User.query.filter(User.id.__gt__(5)).all()
+&gt;=, __ge__
+&lt;, __lt__
+&lt;=, __le__
+==, __eq__
+!=, __ne__
+</code></pre><ul>
+<li>&#x8303;&#x56F4;</li>
+</ul>
+<pre><code class="lang-python">users = User.query.filter(User.id.between(<span class="hljs-number">5</span>, <span class="hljs-number">8</span>)).all()
+users = User.query.filter(User.id.in_((<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>))).all()
+users = User.query.filter(User.id.notin_((<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>))).all()
+</code></pre>
+<ul>
+<li>&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">users = User.query.filter(User.name.startswith(<span class="hljs-string">&apos;l&apos;</span>)).all()
+users = User.query.filter(User.name.endswith(<span class="hljs-string">&apos;ng&apos;</span>)).all()
+users = User.query.filter(User.name.contains(<span class="hljs-string">&apos;n&apos;</span>)).all()
+users = User.query.filter(User.name.like(<span class="hljs-string">&apos;%an%&apos;</span>)).all()
+users = User.query.filter(User.name.notlike(<span class="hljs-string">&apos;%an%&apos;</span>)).all()
+<span class="hljs-comment"># &#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x6A21;&#x7CCA;&#x5339;&#x914D;</span>
+users = User.query.filter(User.name.ilike(<span class="hljs-string">&apos;%an%&apos;</span>)).all()
+users = User.query.filter(User.name.notilike(<span class="hljs-string">&apos;%an%&apos;</span>)).all()
+</code></pre>
+<ul>
+<li>&#x903B;&#x8F91;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x5C31;&#x662F;and&#x5173;&#x7CFB;&#xFF0C;&#x901A;&#x5E38;&#x7701;&#x7565;</span>
+users = User.query.filter(User.id &gt; <span class="hljs-number">3</span>, User.id &lt; <span class="hljs-number">8</span>).all()
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x4E3A;and&#x5173;&#x7CFB;&#xFF0C;&#x529F;&#x80FD;&#x540C;&#x4E0A;</span>
+users = User.query.filter(and_(User.id &gt; <span class="hljs-number">3</span>, User.id &lt; <span class="hljs-number">8</span>)).all()
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x4E3A;or&#x5173;&#x7CFB;</span>
+users = User.query.filter(or_(User.id &lt; <span class="hljs-number">3</span>, User.id &gt; <span class="hljs-number">8</span>)).all()
+</code></pre>
+</li>
+<li><p>&#x5176;&#x4ED6;&#x67E5;&#x8BE2;</p>
+<ul>
+<li>&#x7B49;&#x4EF7;&#x67E5;&#x8BE2;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/dengjia/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dengjia</span><span class="hljs-params">()</span>:</span>
+    user = User.query.get(<span class="hljs-number">1</span>)
+    <span class="hljs-comment"># &#x4E0A;&#x4E0B;&#x7B49;&#x4EF7;</span>
+    user = db.session.query(User).get(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">if</span> user:
+        <span class="hljs-keyword">return</span> user.name
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x67E5;&#x65E0;&#x6B64;&#x4EBA;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x805A;&#x5408;&#x51FD;&#x6570;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> func
+
+<span class="hljs-comment"># &#x805A;&#x5408;&#x51FD;&#x6570;&#xFF1A;max&#x3001;min&#x3001;avg&#x3001;sum&#x3001;count</span>
+<span class="hljs-meta">@app.route(&apos;/juhe/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">juhe</span><span class="hljs-params">()</span>:</span>
+    max_id = db.session.query(func.max(User.id)).scalar()
+    <span class="hljs-keyword">return</span> str(max_id)
+</code></pre>
+<ul>
+<li>&#x5206;&#x7EC4;&#x7EDF;&#x8BA1;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/group/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">group</span><span class="hljs-params">()</span>:</span>
+    ret = db.session.query(User.sex, func.count(User.sex)).group_by(User.sex).all()
+    print(ret)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x5206;&#x7EC4;&#x7EDF;&#x8BA1;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x6307;&#x5B9A;&#x5B57;&#x6BB5;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/fields/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>:</span>
+    ret = User.query.with_entities(User.name, User.sex).all()
+    print(ret)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x6267;&#x884C;SQL&#x8BED;&#x53E5;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/rawsql/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rawsql</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># users = db.session.execute(&apos;select * from user&apos;)</span>
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x62FC;&#x63A5;SQL&#x8BED;&#x53E5;</span>
+    users = db.session.execute(<span class="hljs-string">&apos;select * from user where id &gt; :id&apos;</span>, params={<span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-number">5</span>})
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x4E00;&#x6761;</span>
+    <span class="hljs-comment"># user = users.fetchone()</span>
+    <span class="hljs-comment"># return user.name</span>
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x591A;&#x6761;</span>
+    <span class="hljs-comment"># user_many = users.fetchmany(3)</span>
+    <span class="hljs-comment"># return &apos;,&apos;.join(u.name for u in user_many)</span>
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;</span>
+    user_all = users.fetchall()
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;,&apos;</span>.join(u.name <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> user_all)
+</code></pre>
+<ul>
+<li>&#x5206;&#x9875;&#x67E5;&#x8BE2;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">@app.route(&apos;/paginate/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">paginate</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Pagination&#x5BF9;&#x8C61;</span>
+    pagination = User.query.paginate(page=<span class="hljs-number">1</span>, per_page=<span class="hljs-number">3</span>, error_out=<span class="hljs-keyword">False</span>)
+    <span class="hljs-comment"># &#x5F53;&#x524D;&#x9875;&#x7684;&#x6570;&#x636E;</span>
+    users = pagination.items
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;, &apos;</span>.join(u.name <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> users)
+</code></pre>
+<ul>
+<li>&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x8BF4;&#x660E;</li>
+</ul>
+<pre><code>&#x65B9;&#x6CD5;&#xFF1A;paginate
+    &#x53C2;&#x6570;&#xFF1A;
+        page&#xFF1A;&#x5F53;&#x524D;&#x9875;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1
+        per_page&#xFF1A;&#x6BCF;&#x9875;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;20
+        error_out&#xFF1A;&#x6709;&#x9519;&#x65F6;&#x662F;&#x5426;&#x62A5;&#x9519;
+    &#x8FD4;&#x56DE;&#x503C;&#xFF1A;
+        Pagination&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7684;&#x5206;&#x9875;&#x4FE1;&#x606F;
+
+Pagination:
+    &#x5C5E;&#x6027;&#xFF1A;
+        page&#xFF1A;&#x5F53;&#x524D;&#x9875;&#x7801;
+        per_page&#xFF1A;&#x9875;&#x5927;&#x5C0F;
+        pages&#xFF1A;&#x603B;&#x9875;&#x6570;
+        total&#xFF1A;&#x6570;&#x636E;&#x603B;&#x91CF;
+        prev_num&#xFF1A;&#x4E0A;&#x4E00;&#x9875;&#x9875;&#x7801;
+        next_num&#xFF1A;&#x4E0B;&#x4E00;&#x9875;&#x9875;&#x7801;
+        has_prev&#xFF1A;&#x662F;&#x5426;&#x6709;&#x4E0A;&#x4E00;&#x9875;
+        has_next&#xFF1A;&#x662F;&#x5426;&#x6709;&#x4E0B;&#x4E00;&#x9875;
+        items&#xFF1A;&#x5F53;&#x524D;&#x9875;&#x7684;&#x6570;&#x636E;
+    &#x65B9;&#x6CD5;&#xFF1A;
+        iter_pages&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x5206;&#x9875;&#x5BFC;&#x822A;&#x6761;&#x4E0A;&#x9875;&#x7801;&#xFF0C;&#x663E;&#x793A;&#x4E0D;&#x5B8C;&#x7684;&#x8FD4;&#x56DE;None
+        prev&#xFF1A;&#x4E0A;&#x4E00;&#x9875;&#x7684;&#x5206;&#x9875;&#x5BF9;&#x8C61;
+        next&#xFF1A;&#x4E0B;&#x4E00;&#x9875;&#x7684;&#x5206;&#x9875;&#x5BF9;&#x8C61;
+</code></pre><ul>
+<li>SQL&#x65E5;&#x5FD7;&#xFF1A;&#x67E5;&#x770B;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4EE5;&#x4E0B;&#x4E09;&#x79CD;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;</span>
+
+<span class="hljs-comment"># &#x662F;&#x5426;&#x5F00;&#x542F;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;</span>
+app.config[<span class="hljs-string">&apos;DEBUG&apos;</span>] = <span class="hljs-keyword">True</span>
+<span class="hljs-comment"># &#x662F;&#x5426;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;&#x6A21;&#x5F0F;</span>
+app.config[<span class="hljs-string">&apos;TESTING&apos;</span>] = <span class="hljs-keyword">True</span>
+<span class="hljs-comment"># &#x4E13;&#x95E8;&#x7528;&#x6765;&#x5F00;&#x542F;SQL&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_RECORD_QUERIES&apos;</span>] = <span class="hljs-keyword">True</span>
+
+<span class="hljs-keyword">from</span> flask_sqlalchemy <span class="hljs-keyword">import</span> get_debug_queries
+
+<span class="hljs-keyword">for</span> query <span class="hljs-keyword">in</span> get_debug_queries():
+    print(query)
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x6A21;&#x578B;&#x5173;&#x7CFB;">&#x6A21;&#x578B;&#x5173;&#x7CFB;</h3>
+<ul>
+<li><p>&#x4E00;&#x5BF9;&#x591A;(&#x4F7F;&#x7528;&#x6700;&#x591A;)</p>
+<ul>
+<li>&#x4E00;&#xFF1A;&#x5B66;&#x751F;(Student)<ul>
+<li>&#x6DFB;&#x52A0;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF1A;<code>articles=db.relationship(&apos;Article&apos;,backref=&apos;stu&apos;,lazy=&apos;dynamic&apos;)</code></li>
+</ul>
+</li>
+<li>&#x591A;&#xFF1A;&#x6587;&#x7AE0;(Article)<ul>
+<li>&#x6DFB;&#x52A0;&#x5916;&#x952E;&#x5173;&#x8054;&#xFF1A;<code>sid = db.Column(db.Integer, db.ForeignKey(&apos;student.id&apos;))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x4E00;&#x5BF9;&#x4E00;&#xFF1A;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x60C5;&#x51B5;</p>
+<ul>
+<li>&#x4E00;&#xFF1A;&#x5B66;&#x751F;(Student)<ul>
+<li>&#x6DFB;&#x52A0;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF1A;<code>profile=db.relationship(&apos;Profile&apos;,backref=&apos;stu&apos;,uselist=False)</code></li>
+</ul>
+</li>
+<li>&#x4E00;&#xFF1A;&#x8BE6;&#x60C5;(Profile)<ul>
+<li>&#x6DFB;&#x52A0;&#x5916;&#x952E;&#x5173;&#x8054;&#xFF1A;<code>sid = db.Column(db.Integer, db.ForeignKey(&apos;student.id&apos;))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x591A;&#x5BF9;&#x591A;</p>
+<ul>
+<li><p>&#x591A;&#xFF1A;&#x5B66;&#x751F;(Student)</p>
+<ul>
+<li>&#x6DFB;&#x52A0;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF1A;&#x5FC5;&#x987B;&#x4F7F;&#x7528;secondary&#x6307;&#x5B9A;&#x4E2D;&#x95F4;&#x8868;</li>
+</ul>
+<pre><code class="lang-python">courses = db.relationship(
+    <span class="hljs-string">&apos;Course&apos;</span>, 
+    lazy=<span class="hljs-string">&apos;dynamic&apos;</span>, 
+    secondary=<span class="hljs-string">&apos;selection&apos;</span>, 
+    backref=db.backref(<span class="hljs-string">&apos;students&apos;</span>, lazy=<span class="hljs-string">&apos;dynamic&apos;</span>)
+)
+</code></pre>
+</li>
+<li><p>&#x591A;&#xFF1A;&#x8BFE;&#x7A0B;(Course)</p>
+</li>
+<li><p>&#x4E2D;&#x95F4;&#x5173;&#x8054;&#x8868;(&#x9009;&#x8BFE;&#x8868;)&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7EF4;&#x62A4;</p>
+<pre><code class="lang-python">selection = db.Table(<span class="hljs-string">&apos;selection&apos;</span>,
+    db.Column(<span class="hljs-string">&apos;student_id&apos;</span>, db.Integer, db.ForeignKey(<span class="hljs-string">&apos;student.id&apos;</span>)),
+    db.Column(<span class="hljs-string">&apos;course_id&apos;</span>, db.Integer, db.ForeignKey(<span class="hljs-string">&apos;course.id&apos;</span>))
+)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>&#x53C2;&#x8003;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
+<span class="hljs-keyword">from</span> flask_script <span class="hljs-keyword">import</span> Manager
+<span class="hljs-keyword">from</span> flask_sqlalchemy <span class="hljs-keyword">import</span> SQLAlchemy
+<span class="hljs-keyword">from</span> flask_migrate <span class="hljs-keyword">import</span> MigrateCommand, Migrate
+
+app = Flask(__name__)
+
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_DATABASE_URI&apos;</span>] = <span class="hljs-string">&apos;mysql+pymysql://root:123456@127.0.0.1:3306/model3&apos;</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_TRACK_MODIFICATIONS&apos;</span>] = <span class="hljs-keyword">False</span>
+app.config[<span class="hljs-string">&apos;SQLALCHEMY_COMMIT_ON_TEARDOWN&apos;</span>] = <span class="hljs-keyword">True</span>
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+manager = Manager(app)
+manager.add_command(<span class="hljs-string">&apos;db&apos;</span>, MigrateCommand)
+
+<span class="hljs-comment"># &#x5B66;&#x751F;&#x6A21;&#x578B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span><span class="hljs-params">(db.Model)</span>:</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = db.Column(db.String(<span class="hljs-number">20</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x6DFB;&#x52A0;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF1A;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x65E0;&#x9700;&#x8FC1;&#x79FB;
+    backref&#xFF1A;&#x53CD;&#x5411;&#x5F15;&#x7528;&#x7684;&#x5B57;&#x6BB5;&#x540D;
+    lazy&#xFF1A;&#x5173;&#x8054;&#x6570;&#x636E;&#x7684;&#x52A0;&#x8F7D;&#x65F6;&#x673A;
+        &apos;select&apos; / True&#xFF1A;&#x9996;&#x6B21;&#x4F7F;&#x7528;&#x65F6;&#x81EA;&#x52A8;&#x67E5;&#x8BE2;&#xFF0C;&#x9ED8;&#x8BA4;&#x9009;&#x9879;
+        &apos;joined&apos; / False&#xFF1A;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x65F6;
+        &apos;subquery&apos;&#xFF1A;&#x5B50;&#x67E5;&#x8BE2;&#x65F6;
+        &apos;dynamic&apos;&#xFF1A;&#x4E0D;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5173;&#x8054;&#x6570;&#x636E;&#x7684;&#x67E5;&#x8BE2;(&#x4E0D;&#x80FD;&#x5728;&#x4E00;&#x7684;&#x4E00;&#x4FA7;&#x4F7F;&#x7528;)
+    &quot;&quot;&quot;</span>
+    articles = db.relationship(<span class="hljs-string">&apos;Article&apos;</span>, backref=<span class="hljs-string">&apos;stu&apos;</span>, lazy=<span class="hljs-string">&apos;dynamic&apos;</span>)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x4E00;&#x5BF9;&#x4E00;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF08;uselist=False&#xFF09;</span>
+    profile = db.relationship(<span class="hljs-string">&apos;Profile&apos;</span>, backref=<span class="hljs-string">&apos;stu&apos;</span>, uselist=<span class="hljs-keyword">False</span>)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x591A;&#x5BF9;&#x591A;&#x53CD;&#x5411;&#x5F15;&#x7528;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;secondary&#x6307;&#x5B9A;&#x4E2D;&#x95F4;&#x5173;&#x8054;&#x8868;</span>
+    courses = db.relationship(<span class="hljs-string">&apos;Course&apos;</span>, lazy=<span class="hljs-string">&apos;dynamic&apos;</span>, secondary=<span class="hljs-string">&apos;selection&apos;</span>, 
+                              backref=db.backref(<span class="hljs-string">&apos;students&apos;</span>, lazy=<span class="hljs-string">&apos;dynamic&apos;</span>))
+
+<span class="hljs-comment"># &#x6587;&#x7AE0;&#x6A21;&#x578B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Article</span><span class="hljs-params">(db.Model)</span>:</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    title = db.Column(db.String(<span class="hljs-number">20</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+    content = db.Column(db.Text)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5916;&#x952E;&#x5173;&#x8054;</span>
+    sid = db.Column(db.Integer, db.ForeignKey(<span class="hljs-string">&apos;student.id&apos;</span>))
+
+<span class="hljs-comment"># &#x8BE6;&#x60C5;&#x6A21;&#x578B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span><span class="hljs-params">(db.Model)</span>:</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    realname = db.Column(db.String(<span class="hljs-number">20</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5916;&#x952E;&#x5173;&#x8054;</span>
+    sid = db.Column(db.Integer, db.ForeignKey(<span class="hljs-string">&apos;student.id&apos;</span>))
+
+<span class="hljs-comment"># &#x8BFE;&#x7A0B;&#x6A21;&#x578B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span><span class="hljs-params">(db.Model)</span>:</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = db.Column(db.String(<span class="hljs-number">20</span>), unique=<span class="hljs-keyword">True</span>, nullable=<span class="hljs-keyword">False</span>)
+
+<span class="hljs-comment"># &#x5B66;&#x751F;&#x9009;&#x8BFE;&#x5173;&#x8054;&#x8868;(&#x4E2D;&#x95F4;&#x8868;)&#xFF0C;ORM&#x4F1A;&#x81EA;&#x52A8;&#x7EF4;&#x62A4;</span>
+selection = db.Table(<span class="hljs-string">&apos;selection&apos;</span>,
+    db.Column(<span class="hljs-string">&apos;student_id&apos;</span>, db.Integer, db.ForeignKey(<span class="hljs-string">&apos;student.id&apos;</span>)),
+    db.Column(<span class="hljs-string">&apos;course_id&apos;</span>, db.Integer, db.ForeignKey(<span class="hljs-string">&apos;course.id&apos;</span>))
+)
+
+<span class="hljs-comment"># &#x591A;&#x5BF9;&#x591A;</span>
+<span class="hljs-meta">@app.route(&apos;/many_many/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">many_many</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;&apos;&apos;&apos;</span>
+    student = Student.query.get(<span class="hljs-number">1</span>)
+    course = Course.query.get(<span class="hljs-number">3</span>)
+    <span class="hljs-comment"># &#x9009;&#x8BFE;</span>
+    <span class="hljs-comment"># student.courses.append(course)</span>
+    <span class="hljs-comment"># return student.name + &apos;&#x9009;&#x62E9;&#x4E86;&apos; + course.name</span>
+    <span class="hljs-comment"># &#x53D6;&#x6D88;&#x9009;&#x8BFE;</span>
+    student.courses.remove(course)
+    <span class="hljs-keyword">return</span> student.name + <span class="hljs-string">&apos;&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x4E86;&apos;</span> + course.name
+
+    <span class="hljs-string">&apos;&apos;&apos;
+    # &#x6839;&#x636E;&#x5B66;&#x751F;&#x627E;&#x8BFE;&#x7A0B;
+    student = Student.query.get(1)
+    courses = student.courses.all()
+    return &apos;, &apos;.join(c.name for c in courses)
+    &apos;&apos;&apos;</span>
+
+    <span class="hljs-string">&apos;&apos;&apos;
+    # &#x6839;&#x636E;&#x8BFE;&#x7A0B;&#x627E;&#x5B66;&#x751F;
+    course = Course.query.get(3)
+    students = course.students.all()
+    return &apos;, &apos;.join(s.name for s in students)
+    &apos;&apos;&apos;</span>
+
+<span class="hljs-comment"># &#x4E00;&#x5BF9;&#x4E00;</span>
+<span class="hljs-meta">@app.route(&apos;/one_one/&lt;int:xid&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_one</span><span class="hljs-params">(xid)</span>:</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x5B66;&#x751F;&#x627E;&#x8BE6;&#x60C5;</span>
+    <span class="hljs-comment"># student = Student.query.get(xid)</span>
+    <span class="hljs-comment"># return student.profile.realname</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x8BE6;&#x60C5;&#x627E;&#x5B66;&#x751F;</span>
+    profile = Profile.query.get(xid)
+    <span class="hljs-keyword">return</span> profile.stu.name
+
+<span class="hljs-comment"># &#x4E00;&#x5BF9;&#x591A;</span>
+<span class="hljs-meta">@app.route(&apos;/one_many/&lt;int:xid&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_many</span><span class="hljs-params">(xid)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    # &#x539F;&#x751F;&#x67E5;&#x8BE2;
+    student = Student.query.get(xid)
+    articles = Article.query.filter(Article.sid == xid).all()
+    return &apos;, &apos;.join(a.title for a in articles)
+    &apos;&apos;&apos;</span>
+
+    <span class="hljs-string">&apos;&apos;&apos;
+    # &#x4F7F;&#x7528;join
+    students = Student.query.join(Article, Student.id == Article.sid).all()
+    return &apos;, &apos;.join(s.name for s in students)
+    &apos;&apos;&apos;</span>
+    <span class="hljs-comment"># &#x5173;&#x8054;&#x67E5;&#x8BE2;</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x5B66;&#x751F;&#x627E;&#x6587;&#x7AE0;</span>
+    <span class="hljs-comment"># student = Student.query.get(xid)</span>
+    <span class="hljs-comment"># articles = student.articles.all()</span>
+    <span class="hljs-comment"># return &apos;, &apos;.join(a.title for a in articles)</span>
+    <span class="hljs-comment"># &#x6839;&#x636E;&#x6587;&#x7AE0;&#x627E;&#x5B66;&#x751F;</span>
+    article = Article.query.get(xid)
+    <span class="hljs-keyword">return</span> article.stu.name
+
+<span class="hljs-meta">@app.route(&apos;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6A21;&#x578B;&#x4F7F;&#x7528;&apos;</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    manager.run()
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="flask-uploads.html" class="navigation navigation-prev " aria-label="Previous page: Flask-Uploads">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flask-migrate.html" class="navigation navigation-next " aria-label="Next page: Flask-Migrate">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flask-SQLAlchemy","level":"1.4.14","depth":2,"next":{"title":"Flask-Migrate","level":"1.4.15","depth":2,"path":"extensions/flask-migrate.md","ref":"extensions/flask-migrate.md","articles":[]},"previous":{"title":"Flask-Uploads","level":"1.4.13","depth":2,"path":"extensions/flask-uploads.md","ref":"extensions/flask-uploads.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-sharing","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"battlerry","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Flask","language":"zh-hans","gitbook":"3.2.3","description":"Flask使用"},"file":{"path":"extensions/flask-sqlalchemy.md","mtime":"2020-03-04T09:26:16.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T08:56:49.218Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

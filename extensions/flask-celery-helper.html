@@ -1,0 +1,944 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Flask-Celery-Helper · Flask</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="battlerry">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../deployments/" />
+    
+    
+    <link rel="prev" href="flask-cors.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    基本使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/framework.html">
+            
+                <a href="../introduction/framework.html">
+            
+                    
+                    底层框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/demo.html">
+            
+                <a href="../introduction/demo.html">
+            
+                    
+                    入门演示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/view.html">
+            
+                <a href="../introduction/view.html">
+            
+                    
+                    视图函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/request_response.html">
+            
+                <a href="../introduction/request_response.html">
+            
+                    
+                    请求响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduction/blueprint.html">
+            
+                <a href="../introduction/blueprint.html">
+            
+                    
+                    蓝本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduction/hook.html">
+            
+                <a href="../introduction/hook.html">
+            
+                    
+                    请求钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../introduction/piecemeal.html">
+            
+                <a href="../introduction/piecemeal.html">
+            
+                    
+                    零碎知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../introduction/template.html">
+            
+                <a href="../introduction/template.html">
+            
+                    
+                    模板使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../introduction/static.html">
+            
+                <a href="../introduction/static.html">
+            
+                    
+                    静态资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../introduction/model.html">
+            
+                <a href="../introduction/model.html">
+            
+                    
+                    数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../conversation/">
+            
+                <a href="../conversation/">
+            
+                    
+                    会话技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../conversation/cookie.html">
+            
+                <a href="../conversation/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../conversation/session.html">
+            
+                <a href="../conversation/session.html">
+            
+                    
+                    Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../conversation/token.html">
+            
+                <a href="../conversation/token.html">
+            
+                    
+                    Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    常用扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="flask-script.html">
+            
+                <a href="flask-script.html">
+            
+                    
+                    Flask-Script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="flask-debugtoolbar.html">
+            
+                <a href="flask-debugtoolbar.html">
+            
+                    
+                    Flask-DebugToolbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="flask-session.html">
+            
+                <a href="flask-session.html">
+            
+                    
+                    Flask-Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="flask-login.html">
+            
+                <a href="flask-login.html">
+            
+                    
+                    Flask-Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="flask-restful.html">
+            
+                <a href="flask-restful.html">
+            
+                    
+                    Flask-RESTful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="flask-restplus.html">
+            
+                <a href="flask-restplus.html">
+            
+                    
+                    Flask-RESTPlus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="flask-httpauth.html">
+            
+                <a href="flask-httpauth.html">
+            
+                    
+                    Flask-HTTPAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="flask-jwt-extended.html">
+            
+                <a href="flask-jwt-extended.html">
+            
+                    
+                    Flask-JWT-Extended
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="flask-bootstrap.html">
+            
+                <a href="flask-bootstrap.html">
+            
+                    
+                    Flask-Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="flask-moment.html">
+            
+                <a href="flask-moment.html">
+            
+                    
+                    Flask-Moment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="flask-mail.html">
+            
+                <a href="flask-mail.html">
+            
+                    
+                    Flask-Mail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="flask-wtf.html">
+            
+                <a href="flask-wtf.html">
+            
+                    
+                    Flask-WTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="flask-uploads.html">
+            
+                <a href="flask-uploads.html">
+            
+                    
+                    Flask-Uploads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="flask-sqlalchemy.html">
+            
+                <a href="flask-sqlalchemy.html">
+            
+                    
+                    Flask-SQLAlchemy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="flask-migrate.html">
+            
+                <a href="flask-migrate.html">
+            
+                    
+                    Flask-Migrate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="flask-cache.html">
+            
+                <a href="flask-cache.html">
+            
+                    
+                    Flask-Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="flask-cors.html">
+            
+                <a href="flask-cors.html">
+            
+                    
+                    Flask-CORS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.18" data-path="flask-celery-helper.html">
+            
+                <a href="flask-celery-helper.html">
+            
+                    
+                    Flask-Celery-Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../deployments/">
+            
+                <a href="../deployments/">
+            
+                    
+                    项目部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../deployments/uwsgi.html">
+            
+                <a href="../deployments/uwsgi.html">
+            
+                    
+                    uwsgi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../deployments/gunicorn.html">
+            
+                <a href="../deployments/gunicorn.html">
+            
+                    
+                    gunicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Flask-Celery-Helper</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="flask-celery-helper">Flask-Celery-Helper</h1>
+<h3 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h3>
+<ul>
+<li>&#x4E13;&#x95E8;&#x5728;Flask&#x4E2D;&#x4F7F;&#x7528;celery&#x4E2D;&#x7684;&#x6269;&#x5C55;&#x5E93;&#xFF0C;Flask&#x6587;&#x6863;&#x4E2D;&#x8BF4;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x5DE5;&#x5DE5;&#x5382;&#x51FD;&#x6570;&#x65F6;&#x9700;&#x8981;<code>init_app</code>&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8BE5;&#x6269;&#x5C55;&#xFF0C;&#x4F5C;&#x8005;&#x4E5F;&#x662F;&#x8FD9;&#x4E48;&#x8BF4;&#x7684;&#x3002;</li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<ul>
+<li><code>Redis</code>&#xFF1A;<code>pip install redis==3.4.1</code></li>
+<li><code>Celery</code>&#xFF1A;<code>pip install celery==4.4.1</code></li>
+<li><code>pip install flask-celery-helper</code></li>
+</ul>
+<h3 id="&#x6587;&#x6863;">&#x6587;&#x6863;</h3>
+<ul>
+<li><p><a href="https://docs.celeryproject.org/" target="_blank">Celery&#x6587;&#x6863;</a></p>
+</li>
+<li><p><a href="https://github.com/Robpol86/Flask-Celery-Helper" target="_blank">Flask-Celery-Helper&#x6587;&#x6863;</a></p>
+</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<ul>
+<li>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</li>
+</ul>
+<pre><code>project/
+&#x251C;&#x2500;&#x2500; manage.py
+&#x2514;&#x2500;&#x2500; app/
+    &#x251C;&#x2500;&#x2500; __init__.py
+    &#x251C;&#x2500;&#x2500; config.py
+    &#x251C;&#x2500;&#x2500; tasks.py
+    &#x251C;&#x2500;&#x2500; extensions.py
+    &#x251C;&#x2500;&#x2500; templates/
+    &#x2502;       &#x2514;&#x2500;&#x2500; activate.html
+    &#x2514;&#x2500;&#x2500; views
+            &#x251C;&#x2500;&#x2500; __init__.py
+            &#x251C;&#x2500;&#x2500; main.py
+            &#x2514;&#x2500;&#x2500; user.py
+</code></pre><ul>
+<li><code>manage.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask_script <span class="hljs-keyword">import</span> Manager
+<span class="hljs-keyword">from</span> app <span class="hljs-keyword">import</span> create_app
+<span class="hljs-keyword">from</span> app.extensions <span class="hljs-keyword">import</span> celery
+
+app = create_app()
+manager = Manager(app)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    manager.run()
+</code></pre>
+<ul>
+<li><code>app.__init__.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
+<span class="hljs-keyword">from</span> app.extensions <span class="hljs-keyword">import</span> config_extensions
+<span class="hljs-keyword">from</span> app.views <span class="hljs-keyword">import</span> register_blueprint
+<span class="hljs-keyword">from</span> app.config <span class="hljs-keyword">import</span> Config
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_app</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5E94;&#x7528;</span>
+    app = Flask(__name__)
+    <span class="hljs-comment"># &#x914D;&#x7F6E;&#x5E94;&#x7528;</span>
+    app.config.from_object(Config)
+    <span class="hljs-comment"># &#x914D;&#x7F6E;&#x6269;&#x5C55;</span>
+    config_extensions(app)
+    <span class="hljs-comment"># &#x6CE8;&#x518C;&#x84DD;&#x672C;</span>
+    register_blueprint(app)
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5E94;&#x7528;</span>
+    <span class="hljs-keyword">return</span> app
+</code></pre>
+<ul>
+<li><code>app.config.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Config</span>:</span>
+    MAIL_SERVER = <span class="hljs-string">&apos;smtp.qq.com&apos;</span>
+    MAIL_PORT = <span class="hljs-number">465</span>
+    MAIL_USE_SSL = <span class="hljs-keyword">True</span>
+    MAIL_USERNAME = <span class="hljs-string">&apos;1234567890@qq.com&apos;</span>
+    MAIL_PASSWORD = os.getenv(<span class="hljs-string">&apos;MAIL_PASSWORD&apos;</span>, <span class="hljs-string">&apos;123456&apos;</span>)
+    CELERY_BROKER_URL = <span class="hljs-string">&apos;redis://localhost:6379/2&apos;</span>
+    CELERY_RESULT_BACKEND = <span class="hljs-string">&apos;redis://localhost:6379/2&apos;</span>
+    SERVER_NAME = <span class="hljs-string">&apos;127.0.0.1:5000&apos;</span>
+</code></pre>
+<ul>
+<li><code>app.extensions.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask_mail <span class="hljs-keyword">import</span> Mail
+<span class="hljs-keyword">from</span> flask_celery <span class="hljs-keyword">import</span> Celery
+
+mail = Mail()
+celery = Celery()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">config_extensions</span><span class="hljs-params">(app)</span>:</span>
+    mail.init_app(app)
+    celery.init_app(app)
+</code></pre>
+<ul>
+<li><code>app.tasks.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> app.extensions <span class="hljs-keyword">import</span> mail
+<span class="hljs-keyword">from</span> flask_mail <span class="hljs-keyword">import</span> Message
+<span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> current_app, render_template
+<span class="hljs-keyword">from</span> app.extensions <span class="hljs-keyword">import</span> celery
+
+<span class="hljs-meta">@celery.task</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b)</span>:</span>
+    <span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> sleep
+    sleep(<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">return</span> a + b
+
+<span class="hljs-meta">@celery.task</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">async_send_mail</span><span class="hljs-params">(subject, to, template, **kwargs)</span>:</span>
+    <span class="hljs-keyword">if</span> isinstance(to, list):
+        recipients = to
+    <span class="hljs-keyword">elif</span> isinstance(to, str):
+        recipients = to.split(<span class="hljs-string">&apos;,&apos;</span>)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&apos;&#x90AE;&#x4EF6;&#x63A5;&#x6536;&#x8005;&#x683C;&#x5F0F;&#x6709;&#x8BEF;&apos;</span>)
+    <span class="hljs-comment"># &#x6E32;&#x67D3;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x5F97;&#x5230;&#x90AE;&#x4EF6;&#x6D88;&#x606F;&#x4F53;</span>
+    html = render_template(template, **kwargs)
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x90AE;&#x4EF6;&#x5BF9;&#x8C61;</span>
+    msg = Message(
+        subject=subject,
+        recipients=recipients,
+        html=html,
+        sender=current_app.config[<span class="hljs-string">&apos;MAIL_USERNAME&apos;</span>]
+    )
+    <span class="hljs-keyword">with</span> current_app.app_context():
+        mail.send(msg)
+</code></pre>
+<ul>
+<li><code>app/templates/activate.html</code></li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {{username}}!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x8D26;&#x6237;&#x6FC0;&#x6D3B;&#x8BF7;&#x70B9;&#x51FB;&#x53F3;&#x8FB9;&#x8FDE;&#x63A5;<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{ url_for(&apos;user.activate&apos;, token=token, _external=True) }}&quot;</span>&gt;</span>&#x6FC0;&#x6D3B;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<ul>
+<li><code>app.views.__init__.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> .main <span class="hljs-keyword">import</span> main
+<span class="hljs-keyword">from</span> .user <span class="hljs-keyword">import</span> user
+
+<span class="hljs-comment"># &#x84DD;&#x672C;&#x914D;&#x7F6E;</span>
+DEFAULT_BLUEPRINT = (
+    (main, <span class="hljs-string">&apos;&apos;</span>),
+    (user, <span class="hljs-string">&apos;/user&apos;</span>),
+)
+
+<span class="hljs-comment"># &#x5C01;&#x88C5;&#x51FD;&#x6570;&#xFF0C;&#x6CE8;&#x518C;&#x84DD;&#x672C;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register_blueprint</span><span class="hljs-params">(app)</span>:</span>
+    <span class="hljs-keyword">for</span> blueprint, url_prefix <span class="hljs-keyword">in</span> DEFAULT_BLUEPRINT:
+        app.register_blueprint(blueprint, url_prefix=url_prefix)
+</code></pre>
+<ul>
+<li><code>app.views.main.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Blueprint
+<span class="hljs-keyword">from</span> app.tasks <span class="hljs-keyword">import</span> add
+
+main = Blueprint(<span class="hljs-string">&apos;main&apos;</span>, __name__)
+
+<span class="hljs-meta">@main.route(&apos;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Celery&#x6D4B;&#x8BD5;&apos;</span>
+
+<span class="hljs-meta">@main.route(&apos;/add/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ad</span><span class="hljs-params">()</span>:</span>
+    s = add.delay(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+    print(s)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;add complete&apos;</span>
+</code></pre>
+<ul>
+<li><code>app.views.user.py</code></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Blueprint
+<span class="hljs-keyword">from</span> app.tasks <span class="hljs-keyword">import</span> async_send_mail
+
+user = Blueprint(<span class="hljs-string">&apos;user&apos;</span>, __name__)
+
+<span class="hljs-meta">@user.route(&apos;/register/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">send</span><span class="hljs-params">()</span>:</span>
+    async_send_mail.delay(
+        subject=<span class="hljs-string">&apos;celery test&apos;</span>,
+        to=<span class="hljs-string">&apos;jerry625731716@163.com&apos;</span>,
+        template=<span class="hljs-string">&apos;activate.html&apos;</span>,
+        username=<span class="hljs-string">&apos;xxx&apos;</span>, token=<span class="hljs-number">10</span>
+    )
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF0C;&#x8BF7;&#x70B9;&#x51FB;&#x90AE;&#x4EF6;&#x94FE;&#x63A5;&#x5B8C;&#x6210;&#x6FC0;&#x6D3B;&apos;</span>
+
+<span class="hljs-comment"># &#x6FC0;&#x6D3B;&#x7684;&#x8DEF;&#x7531;&#xFF1A;token&#x79F0;&#x4E3A;&#x4EE4;&#x724C;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x660E;&#x6587;&#x4FE1;&#x606F;</span>
+<span class="hljs-meta">@user.route(&apos;/activate/&lt;token&gt;/&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">activate</span><span class="hljs-params">(token)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x7528;&#x6237;{}&#x6FC0;&#x6D3B;&#x6210;&#x529F;&apos;</span>.format(token)
+</code></pre>
+<h3 id="&#x6D4B;&#x8BD5;">&#x6D4B;&#x8BD5;</h3>
+<ul>
+<li>&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;<code>python manage.py runserver -d -r --threaded</code></li>
+<li>&#x542F;&#x52A8;<code>Celery</code>&#xFF1A;<code>celery -A manage.celery worker --loglevel=info</code></li>
+<li>&#x542F;&#x52A8;<code>Redis</code>&#xFF1A;&#x56E0;&#x4E3A;&#x914D;&#x7F6E;&#x4E2D;<code>Celery</code>&#x4F9D;&#x8D56;<code>Redis</code></li>
+<li>&#x5F02;&#x6B65;&#x52A0;&#x6CD5;&#xFF1A;<code>http://127.0.0.1:5000/add/</code></li>
+<li>&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#xFF1A;<code>http://127.0.0.1:5000/user/register/</code></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="flask-cors.html" class="navigation navigation-prev " aria-label="Previous page: Flask-CORS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../deployments/" class="navigation navigation-next " aria-label="Next page: 项目部署">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flask-Celery-Helper","level":"1.4.18","depth":2,"next":{"title":"项目部署","level":"1.5","depth":1,"path":"deployments/README.md","ref":"deployments/README.md","articles":[{"title":"uwsgi","level":"1.5.1","depth":2,"path":"deployments/uwsgi.md","ref":"deployments/uwsgi.md","articles":[]},{"title":"gunicorn","level":"1.5.2","depth":2,"path":"deployments/gunicorn.md","ref":"deployments/gunicorn.md","articles":[]}]},"previous":{"title":"Flask-CORS","level":"1.4.17","depth":2,"path":"extensions/flask-cors.md","ref":"extensions/flask-cors.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-sharing","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"battlerry","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Flask","language":"zh-hans","gitbook":"3.2.3","description":"Flask使用"},"file":{"path":"extensions/flask-celery-helper.md","mtime":"2020-03-04T08:50:15.308Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T08:56:49.218Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
